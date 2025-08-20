@@ -26,7 +26,7 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **Frontend:** Configure Tailwind CSS.
 - [x] Set up MongoDB Atlas and get the connection string.
 - [x] Create `.env` files in both `frontend` and `backend` directories and add necessary environment variables (e.g., `MONGO_URI`, `PORT`).
-- [ ] Set up ESLint, Prettier, and Husky for code quality in both projects.
+- [x] Set up ESLint, Prettier, and Husky for code quality in both projects.
 - [ ] **CI/CD:** Set up a basic GitHub Actions workflow to run linting checks on push/PR.
 
 ---
