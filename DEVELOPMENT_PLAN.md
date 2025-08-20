@@ -24,8 +24,8 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **Frontend:** `cd frontend` and initialize Next.js project with TypeScript (`npx create-next-app@latest . --typescript`).
 - [x] **Frontend:** Install core dependencies: `tailwindcss`, `axios`, `react-hook-form`, `zod`, `@tanstack/react-query`.
 - [x] **Frontend:** Configure Tailwind CSS.
-- [ ] Set up MongoDB Atlas and get the connection string.
-- [ ] Create `.env` files in both `frontend` and `backend` directories and add necessary environment variables (e.g., `MONGO_URI`, `PORT`).
+- [x] Set up MongoDB Atlas and get the connection string.
+- [x] Create `.env` files in both `frontend` and `backend` directories and add necessary environment variables (e.g., `MONGO_URI`, `PORT`).
 - [ ] Set up ESLint, Prettier, and Husky for code quality in both projects.
 - [ ] **CI/CD:** Set up a basic GitHub Actions workflow to run linting checks on push/PR.
 

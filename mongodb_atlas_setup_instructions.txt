@@ -1,0 +1,40 @@
+To set up MongoDB Atlas and get the connection string, follow these steps:
+
+1.  **Create a MongoDB Atlas Account:**
+    *   Go to the [MongoDB Atlas website](https://www.mongodb.com/cloud/atlas/register) and sign up for a free account.
+
+2.  **Create a New Cluster:**
+    *   Once logged in, click on "Build a Database" or "Create a new Cluster."
+    *   Choose a cloud provider (e.g., AWS, Google Cloud, Azure) and a region close to your location.
+    *   Select the "M0 Sandbox" (free tier) cluster type.
+    *   Give your cluster a name (e.g., `edusmart-lms-cluster`).
+    *   Click "Create Cluster."
+
+3.  **Set Up IP Access List:**
+    *   While your cluster is provisioning, navigate to the "Network Access" tab.
+    *   Click "Add IP Address."
+    *   For development, you can click "Allow Access from Anywhere" (for testing purposes only, not recommended for production).
+    *   Alternatively, add your current IP address.
+    *   Click "Confirm."
+
+4.  **Create a Database User:**
+    *   Go to the "Database Access" tab.
+    *   Click "Add New Database User."
+    *   Choose a strong username and password. Remember these credentials, as you'll need them for your connection string.
+    *   Grant the user "Read and write to any database" privileges.
+    *   Click "Add User."
+
+5.  **Get the Connection String:**
+    *   Once your cluster is ready (it might take a few minutes), go to the "Overview" tab.
+    *   Click the "Connect" button.
+    *   Choose "Connect your application."
+    *   Select "Node.js" as your driver and choose the latest version.
+    *   Copy the provided connection string. It will look something like this:
+        `mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/?retryWrites=true&w=majority`
+
+6.  **Replace Placeholders:**
+    *   In the copied connection string, replace `<username>` with the database username you created.
+    *   Replace `<password>` with the database user's password.
+    *   (The `<cluster-name>.mongodb.net` part should already be filled in).
+
+This modified connection string is your `MONGO_URI` that you will add to your `.env` file in the backend directory.
