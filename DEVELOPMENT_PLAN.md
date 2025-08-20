@@ -44,7 +44,7 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **[Test]** Setup testing packages for backend.
 - [x] **[Test]** Write unit tests for the User model methods.
 - [x] **[Test]** Write integration tests for the `/register` and `/login` endpoints.
-- [ ] **[Docs]** Set up Swagger/OpenAPI specification and document all authentication endpoints.
+- [x] **[Docs]** Set up Swagger/OpenAPI specification and document all authentication endpoints.
 
 **2.2 Frontend Authentication**
 - [ ] **Frontend:** Create reusable UI components for forms and inputs.
