@@ -47,7 +47,7 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **[Docs]** Set up Swagger/OpenAPI specification and document all authentication endpoints.
 
 **2.2 Frontend Authentication**
-- [ ] **Frontend:** Create reusable UI components for forms and inputs.
+- [x] **Frontend:** Create reusable UI components for forms and inputs.
 - [ ] **Frontend:** Build the Login and Registration pages with forms.
 - [ ] **Frontend:** Implement form validation using `react-hook-form` and `zod`.
 - [ ] **Frontend:** Create an API service layer for making auth requests to the backend.
