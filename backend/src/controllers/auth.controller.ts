@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { User } from '../models/user.model';
+import { User, IUser } from '../models/user.model';
 import jwt from 'jsonwebtoken';
 
 // Function to generate JWT
@@ -19,7 +19,7 @@ export const registerUser = async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    const user = await User.create({
+    const user: IUser = await User.create({
       name,
       email,
       password,
@@ -31,7 +31,7 @@ export const registerUser = async (req: Request, res: Response) => {
         name: user.name,
         email: user.email,
         role: user.role,
-        token: generateToken(user._id),
+        token: generateToken(String(user._id)),
       });
     } else {
       res.status(400).json({ message: 'Invalid user data' });
@@ -45,7 +45,7 @@ export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email }).select('+password');
+    const user: IUser | null = await User.findOne({ email }).select('+password');
 
     if (user && (await user.comparePassword(password))) {
       res.json({
@@ -53,7 +53,7 @@ export const loginUser = async (req: Request, res: Response) => {
         name: user.name,
         email: user.email,
         role: user.role,
-        token: generateToken(user._id),
+        token: generateToken(String(user._id)),
       });
     } else {
       res.status(401).json({ message: 'Invalid email or password' });

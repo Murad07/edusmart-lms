@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
   res.send('EduSmart LMS Backend is running!');
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+export { app, server };

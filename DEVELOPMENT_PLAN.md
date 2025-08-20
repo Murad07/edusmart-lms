@@ -1,6 +1,6 @@
 # EduSmart LMS - Actionable Development Plan
 
-This document breaks down the project plan into a detailed, step-by-step checklist. Mark items as you complete them to track your progress. This plan integrates testing and API documentation throughout the development lifecycle, following professional best practices.
+This document breaks down the project plan into a detailed, step-by-step checklist. Mark items as I complete them to track my progress. This plan integrates testing and API documentation throughout the development lifecycle, following professional best practices.
 
 ---
 
@@ -34,15 +34,16 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 ### 🔐 Phase 2: Authentication & User Management (Week 2)
 
 **2.1 Backend Authentication**
-- [ ] **Backend:** Install auth-related packages: `jsonwebtoken`, `bcryptjs`, `@types/jsonwebtoken`, `@types/bcryptjs`.
-- [ ] **Backend:** Design and implement the `User` model/schema with Mongoose (include roles).
-- [ ] **Backend:** Implement password hashing with `bcryptjs` in the User model.
-- [ ] **Backend:** Create the user registration endpoint (`POST /api/auth/register`) with validation.
-- [ ] **Backend:** Create the user login endpoint (`POST /api/auth/login`) which returns a JWT.
-- [ ] **Backend:** Implement JWT verification middleware to protect routes.
-- [ ] **Backend:** Implement role-based authorization middleware.
-- [ ] **[Test]** Write unit tests for the User model methods.
-- [ ] **[Test]** Write integration tests for the `/register` and `/login` endpoints.
+- [x] **Backend:** Install auth-related packages: `jsonwebtoken`, `bcryptjs`, `@types/jsonwebtoken`, `@types/bcryptjs`.
+- [x] **Backend:** Design and implement the `User` model/schema with Mongoose (include roles).
+- [x] **Backend:** Implement password hashing with `bcryptjs` in the User model.
+- [x] **Backend:** Create the user registration endpoint (`POST /api/auth/register`) with validation.
+- [x] **Backend:** Create the user login endpoint (`POST /api/auth/login`) which returns a JWT.
+- [x] **Backend:** Implement JWT verification middleware to protect routes.
+- [x] **Backend:** Implement role-based authorization middleware.
+- [x] **[Test]** Setup testing packages for backend.
+- [x] **[Test]** Write unit tests for the User model methods.
+- [x] **[Test]** Write integration tests for the `/register` and `/login` endpoints.
 - [ ] **[Docs]** Set up Swagger/OpenAPI specification and document all authentication endpoints.
 
 **2.2 Frontend Authentication**
@@ -182,6 +183,6 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [ ] **Docs:** Finalize and polish the Swagger/OpenAPI documentation.
 - [ ] **Docs:** Create a short user manual for students and instructors.
 - [ ] **Portfolio:** Seed the production database with high-quality demo data.
-- [ ] **Portfolio:** Create a compelling case study write-up for your portfolio.
+- [ ] **Portfolio:** Create a compelling case study write-up for my portfolio.
 - [ ] **Portfolio:** Record a video demo of the application.
 - [ ] **Portfolio:** Clean up the GitHub repository, ensuring a professional presentation.
