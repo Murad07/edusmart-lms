@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import useAuthRedirect from "@/hooks/useAuthRedirect";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Home() {
   const isAuthenticated = useAuthRedirect();
+  const { user } = useAuth();
 
   if (!isAuthenticated) {
     return null; // Or a loading spinner
@@ -15,6 +17,9 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1 className="text-4xl font-bold">Welcome to EduSmart LMS!</h1>
         <p className="text-lg">You are logged in.</p>
+        {user && user.role && (
+          <p className="text-md">Your role: {user.role}</p>
+        )}
         <Image
           className="dark:invert"
           src="/next.svg"

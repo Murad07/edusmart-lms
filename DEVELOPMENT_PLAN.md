@@ -53,7 +53,7 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **Frontend:** Create an API service layer for making auth requests to the backend.
 - [x] **Frontend:** Set up a global state/context for managing authentication (user, token, isAuthenticated).
 - [x] **Frontend:** Implement protected routes that redirect unauthenticated users.
-- [ ] **Frontend:** Implement role-based rendering/navigation.
+- [x] **Frontend:** Implement role-based rendering/navigation.
 
 **2.3 User Management**
 - [ ] **Backend:** Create endpoints for user profile management (`GET /api/users/me`, `PUT /api/users/me`).
