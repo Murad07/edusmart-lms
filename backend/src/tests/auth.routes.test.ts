@@ -94,7 +94,7 @@ describe('Auth Routes', () => {
         email: 'profile@example.com',
         password: 'password123',
       });
-      userId = user._id.toString();
+      userId = (user._id as any).toString();
       const res = await request(app).post('/api/auth/login').send({
         email: 'profile@example.com',
         password: 'password123',

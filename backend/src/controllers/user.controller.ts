@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import User from '../models/user.model';
+import { User } from '../models/user.model';
 
 // @desc    Get user profile
 // @route   GET /api/users/me

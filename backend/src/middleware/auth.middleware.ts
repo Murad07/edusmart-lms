@@ -28,7 +28,7 @@ export const protect = async (req: Request, res: Response, next: NextFunction) =
         return res.status(401).json({ message: 'Not authorized, user not found' });
       }
 
-      req.user = { id: user._id.toString(), role: user.role };
+      req.user = { id: (user._id as any).toString(), role: user.role };
       next();
     } catch (error) {
       console.error(error);
