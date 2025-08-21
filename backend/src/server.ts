@@ -12,10 +12,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || '')
-  .then(() => console.log('MongoDB connected successfully.'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB only if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(process.env.MONGO_URI || '')
+    .then(() => console.log('MongoDB connected successfully.'))
+    .catch(err => console.error('MongoDB connection error:', err));
+}
 
 app.use(cors());
 app.use(express.json());

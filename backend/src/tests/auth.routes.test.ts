@@ -9,14 +9,7 @@ import nodemailer from 'nodemailer';
 jest.mock('nodemailer');
 
 describe('Auth Routes', () => {
-  afterEach(async () => {
-    await User.deleteMany({});
-  });
-
-  afterAll(() => {
-    mongoose.connection.close();
-    server.close();
-  });
+  // No afterEach or afterAll here, as setup.ts handles database cleanup and connection closing
 
   describe('POST /api/auth/register', () => {
     it('should register a new user', async () => {
