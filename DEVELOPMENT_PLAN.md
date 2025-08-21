@@ -48,11 +48,11 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 
 **2.2 Frontend Authentication**
 - [x] **Frontend:** Create reusable UI components for forms and inputs.
-- [ ] **Frontend:** Build the Login and Registration pages with forms.
-- [ ] **Frontend:** Implement form validation using `react-hook-form` and `zod`.
-- [ ] **Frontend:** Create an API service layer for making auth requests to the backend.
-- [ ] **Frontend:** Set up a global state/context for managing authentication (user, token, isAuthenticated).
-- [ ] **Frontend:** Implement protected routes that redirect unauthenticated users.
+- [x] **Frontend:** Build the Login and Registration pages with forms.
+- [x] **Frontend:** Implement form validation using `react-hook-form` and `zod`.
+- [x] **Frontend:** Create an API service layer for making auth requests to the backend.
+- [x] **Frontend:** Set up a global state/context for managing authentication (user, token, isAuthenticated).
+- [x] **Frontend:** Implement protected routes that redirect unauthenticated users.
 - [ ] **Frontend:** Implement role-based rendering/navigation.
 
 **2.3 User Management**
