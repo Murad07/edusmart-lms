@@ -3,18 +3,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Link from "next/link";
 import { useState } from "react";
 import authService from "@/services/auth.service";
+import Link from "next/link";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
 });
 
-type LoginFormValues = z.infer<typeof formSchema>;
+type ForgotPasswordFormValues = z.infer<typeof formSchema>;
 
-const LoginForm = () => {
+const ForgotPasswordForm = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -22,17 +21,16 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormValues>({
+  } = useForm<ForgotPasswordFormValues>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: LoginFormValues) => {
+  const onSubmit = async (data: ForgotPasswordFormValues) => {
     setLoading(true);
     setMessage("");
     try {
-      await authService.login(data);
-      // Redirect or show success message
-      console.log("Login successful!");
+      await authService.forgotPassword(data.email); // Assuming forgotPassword exists in authService
+      setMessage("Password reset email sent! Check your inbox.");
     } catch (error: any) {
       const resMessage =
         (error.response &&
@@ -48,7 +46,7 @@ const LoginForm = () => {
 
   return (
     <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold text-center">Login</h1>
+      <h1 className="text-2xl font-bold text-center">Forgot Password</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <label
@@ -67,49 +65,29 @@ const LoginForm = () => {
             <p className="mt-2 text-sm text-red-600">{errors.email.message}</p>
           )}
         </div>
-        <div>
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            {...register("password")}
-            className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-          />
-          {errors.password && (
-            <p className="mt-2 text-sm text-red-600">
-              {errors.password.message}
-            </p>
-          )}
-          <div className="text-right text-sm mt-1">
-            <Link href="/auth/forgot-password" className="font-medium text-indigo-600 hover:text-indigo-500">
-              Forgot password?
-            </Link>
-          </div>
-        </div>
         <button
           type="submit"
           className="w-full px-4 py-2 font-bold text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           disabled={loading}
         >
-          {loading ? "Loading..." : "Login"}
+          {loading ? "Sending..." : "Send Reset Link"}
         </button>
-        {message && (
-          <div className="text-red-500 text-sm text-center">{message}</div>
-        )}
       </form>
+      {message && (
+        <div className="text-center text-sm mt-4">
+          <p className={message.includes("sent") ? "text-green-600" : "text-red-600"}>
+            {message}
+          </p>
+        </div>
+      )}
       <p className="text-sm text-center text-gray-600">
-        Don't have an account?{' '}
-        <Link href="/auth/register" className="font-medium text-indigo-600 hover:text-indigo-500">
-            Sign up
+        Remember your password?{' '}
+        <Link href="/auth/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+          Log in
         </Link>
       </p>
     </div>
   );
 };
 
-export default LoginForm;
+export default ForgotPasswordForm;

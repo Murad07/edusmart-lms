@@ -1,5 +1,6 @@
 import { Schema, model, Document } from 'mongoose';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 
 /**
  * @swagger
@@ -35,6 +36,13 @@ import bcrypt from 'bcryptjs';
  *           type: string
  *           format: date-time
  *           description: The date and time the user was created
+ *         resetPasswordToken:
+ *           type: string
+ *           description: Token for password reset
+ *         resetPasswordExpire:
+ *           type: string
+ *           format: date-time
+ *           description: Expiration time for password reset token
  */
 export interface IUser extends Document {
   name: string;
@@ -42,7 +50,10 @@ export interface IUser extends Document {
   password?: string;
   role: 'student' | 'instructor' | 'admin';
   createdAt: Date;
+  resetPasswordToken?: string;
+  resetPasswordExpire?: Date;
   comparePassword(password: string): Promise<boolean>;
+  getResetPasswordToken(): string;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -70,6 +81,8 @@ const UserSchema = new Schema<IUser>({
     type: Date,
     default: Date.now,
   },
+  resetPasswordToken: String,
+  resetPasswordExpire: Date,
 });
 
 // Pre-save hook to hash password
@@ -89,6 +102,23 @@ UserSchema.pre<IUser>('save', async function (next) {
 // Method to compare password
 UserSchema.methods.comparePassword = function (password: string): Promise<boolean> {
   return bcrypt.compare(password, this.password || '');
+};
+
+// Generate and hash password token
+UserSchema.methods.getResetPasswordToken = function (): string {
+  // Generate token
+  const resetToken = crypto.randomBytes(20).toString('hex');
+
+  // Hash token and set to resetPasswordToken field
+  this.resetPasswordToken = crypto
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
+
+  // Set expire
+  this.resetPasswordExpire = Date.now() + 10 * 60 * 1000; // 10 Minutes
+
+  return resetToken;
 };
 
 export const User = model<IUser>('User', UserSchema);

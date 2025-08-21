@@ -56,12 +56,12 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] **Frontend:** Implement role-based rendering/navigation.
 
 **2.3 User Management**
-- [ ] **Backend:** Create endpoints for user profile management (`GET /api/users/me`, `PUT /api/users/me`).
-- [ ] **Backend:** Implement password reset functionality (request and reset endpoints).
-- [ ] **[Test]** Write integration tests for user profile and password reset endpoints.
-- [ ] **[Docs]** Document user management endpoints in Swagger.
-- [ ] **Frontend:** Create a User Profile page to view and update information.
-- [ ] **Frontend:** Implement the password reset UI flow.
+- [x] **Backend:** Create endpoints for user profile management (`GET /api/users/me`, `PUT /api/users/me`).
+- [x] **Backend:** Implement password reset functionality (request and reset endpoints).
+- [x] **[Test]** Write integration tests for user profile and password reset endpoints.
+- [x] **[Docs]** Document user management endpoints in Swagger.
+- [x] **Frontend:** Create a User Profile page to view and update information.
+- [x] **Frontend:** Implement the password reset UI flow.
 
 ---
 
