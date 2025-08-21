@@ -1,13 +1,11 @@
 "use client";
 
 import ResetPasswordForm from "@/components/auth/ResetPasswordForm";
+import { useParams } from "next/navigation";
 
-interface ResetPasswordPageProps {
-  params: { token: string };
-}
-
-const ResetPasswordPage = ({ params }: ResetPasswordPageProps) => {
-  const { token } = params;
+const ResetPasswordPage = () => {
+  const params = useParams();
+  const token = params.token as string;
 
   return (
     <div className="flex items-center justify-center min-h-screen">
