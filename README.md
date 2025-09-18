@@ -57,7 +57,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Prerequisites
 - Node.js (LTS version recommended)
-- npm (comes with Node.js)
+- pnpm (comes with Node.js)
 - MongoDB Atlas account (or a local MongoDB instance)
 
 ### Installation
@@ -71,7 +71,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 2.  **Backend Setup:**
     ```bash
     cd backend
-    npm install
+    pnpm install
     ```
     Create a `.env` file in the `backend` directory and add your MongoDB URI and JWT secret:
     ```
@@ -83,7 +83,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 3.  **Frontend Setup:**
     ```bash
     cd ../frontend
-    npm install
+    pnpm install
     ```
     Create a `.env.local` file in the `frontend` directory and add your backend API URL:
     ```
@@ -96,7 +96,7 @@ Follow these instructions to get a copy of the project up and running on your lo
     Open your terminal, navigate to the `backend` directory, and run:
     ```bash
     cd backend
-    npm run dev
+    pnpm run dev
     ```
     The backend server will start on `http://localhost:5000` (or your specified PORT).
 
@@ -104,7 +104,7 @@ Follow these instructions to get a copy of the project up and running on your lo
     Open a **new** terminal, navigate to the `frontend` directory, and run:
     ```bash
     cd frontend
-    npm run dev
+    pnpm run dev
     ```
     The frontend application will be accessible at `http://localhost:3000`.
 

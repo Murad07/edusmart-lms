@@ -17,12 +17,12 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [x] Initialize Git repository (`git init`).
 - [x] Create a `.gitignore` file for Node.js, Next.js, and OS-specific files.
 - [x] Create the main project structure: `frontend`, `backend`, `shared`, `docs`.
-- [x] **Backend:** `cd backend` and initialize Node.js project (`npm init -y`).
-- [x] **Backend:** Install core dependencies: `express`, `mongoose`, `dotenv`, `cors`.
-- [x] **Backend:** Install dev dependencies: `typescript`, `ts-node-dev`, `nodemon`, `@types/node`, `@types/express`.
+- [x] **Backend:** `cd backend` and initialize Node.js project (`pnpm init`).
+- [x] **Backend:** Install core dependencies: `pnpm install express mongoose dotenv cors`.
+- [x] **Backend:** Install dev dependencies: `pnpm install -D typescript ts-node-dev nodemon @types/node @types/express`.
 - [x] **Backend:** Set up a basic Express server in `backend/src/server.ts`.
-- [x] **Frontend:** `cd frontend` and initialize Next.js project with TypeScript (`npx create-next-app@latest . --typescript`).
-- [x] **Frontend:** Install core dependencies: `tailwindcss`, `axios`, `react-hook-form`, `zod`, `@tanstack/react-query`.
+- [x] **Frontend:** `cd frontend` and initialize Next.js project with TypeScript (`pnpm create next-app . --typescript`).
+- [x] **Frontend:** Install core dependencies: `pnpm install tailwindcss axios react-hook-form zod @tanstack/react-query`.
 - [x] **Frontend:** Configure Tailwind CSS.
 - [x] Set up MongoDB Atlas and get the connection string.
 - [x] Create `.env` files in both `frontend` and `backend` directories and add necessary environment variables (e.g., `MONGO_URI`, `PORT`).
@@ -34,7 +34,7 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 ### 🔐 Phase 2: Authentication & User Management (Week 2)
 
 **2.1 Backend Authentication**
-- [x] **Backend:** Install auth-related packages: `jsonwebtoken`, `bcryptjs`, `@types/jsonwebtoken`, `@types/bcryptjs`.
+- [x] **Backend:** Install auth-related packages: `pnpm install jsonwebtoken bcryptjs @types/jsonwebtoken @types/bcryptjs`.
 - [x] **Backend:** Design and implement the `User` model/schema with Mongoose (include roles).
 - [x] **Backend:** Implement password hashing with `bcryptjs` in the User model.
 - [x] **Backend:** Create the user registration endpoint (`POST /api/auth/register`) with validation.
