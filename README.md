@@ -27,6 +27,9 @@ EduSmart LMS is a comprehensive Learning Management System designed to facilitat
 - Implemented protected routes that redirect unauthenticated users.
 - Implemented role-based rendering/navigation.
 
+### Phase 3: Core Course Management
+- Designed and implemented MongoDB schemas for Course, Module, Lesson, and Enrollment.
+
 ## Technologies Used
 
 ### Frontend (Next.js, TypeScript)

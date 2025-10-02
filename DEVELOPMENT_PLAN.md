@@ -68,9 +68,10 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 ### 📚 Phase 3: Core Course Management (Week 3-4)
 
 **3.1 Database & File Storage Setup**
-- [ ] **Backend:** Design and implement MongoDB schemas for `Course`, `Module`, `Lesson`, `Enrollment`.
-- [ ] **Backend:** Set up cloud storage (Cloudinary or AWS S3) and configure API keys.
-- [ ] **Backend:** Install and configure `multer` for handling file uploads.
+- [x] **Backend:** Design and implement MongoDB schemas for `Course`, `Module`, `Lesson`, `Enrollment`.
+- [x] **Backend:** Set up cloud storage (Cloudinary or AWS S3) and configure API keys.
+- [x] **Backend:** Install and configure `multer` for handling file uploads.
+- [ ] **TODO:** Add Cloudinary credentials to backend/.env file.
 
 **3.2 Instructor Features**
 - [ ] **Backend:** Create CRUD endpoints for `Course` management.
@@ -184,5 +185,5 @@ This document breaks down the project plan into a detailed, step-by-step checkli
 - [ ] **Docs:** Create a short user manual for students and instructors.
 - [ ] **Portfolio:** Seed the production database with high-quality demo data.
 - [ ] **Portfolio:** Create a compelling case study write-up for my portfolio.
-- [ ] **Portfolio:** Record a video demo of the application.
+- [- [ ] **Portfolio:** Record a video demo of the application.
 - [ ] **Portfolio:** Clean up the GitHub repository, ensuring a professional presentation.
